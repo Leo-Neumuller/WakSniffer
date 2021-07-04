@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BCD4C70-A40F-4E57-B93A-420027466132}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WakBot</RootNamespace>
+    <AssemblyName>WakBot</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\..\Documents\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Buffers">
+      <HintPath>..\..\..\..\Documents\ref\DotNetty.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Codecs">
+      <HintPath>..\..\..\..\Documents\ref\DotNetty.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Common">
+      <HintPath>..\..\..\..\Documents\ref\DotNetty.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Handlers">
+      <HintPath>..\..\..\..\Documents\ref\DotNetty.Handlers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Transport">
+      <HintPath>..\..\..\..\Documents\ref\DotNetty.Transport.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\..\Documents\ref\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>..\..\..\..\Documents\ref\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\..\..\Documents\ref\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq">
+      <HintPath>..\..\..\..\Documents\ref\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ref\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\..\Documents\ref\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ref\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ref\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ref\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sniff\auth\auth.cs" />
+    <Compile Include="sniff\packet_handler\DictPackets.cs" />
+    <Compile Include="sniff\packet_handler\Enums\CharacteristiquesEnum.cs" />
+    <Compile Include="sniff\packet_handler\Enums\DeplacementType.cs" />
+    <Compile Include="sniff\packet_handler\Enums\SpellEnum.cs" />
+    <Compile Include="sniff\packet_handler\GamePacketHandler.cs" />
+    <Compile Include="sniff\packet_handler\globalclasses\MapPosition.cs" />
+    <Compile Include="sniff\packet_handler\packet.cs" />
+    <Compile Include="sniff\packet_handler\PacketHandler.cs" />
+    <Compile Include="sniff\packet_handler\packet\AskPublicKey.cs" />
+    <Compile Include="sniff\packet_handler\packet\AskServerList.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterInformation.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterList.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\Breed.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterDiscoveredItems.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharactereApparencePart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharactereBreedPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharactereHPPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharactereIdentityPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterEmoteInventoryPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharactereNamePart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterFightPropsPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterIDPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacteristiquesPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterLandmarkInventoryPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterSerializedPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterShortcutInventoryPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterSpawn.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CharacterSpellInventoryPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\ChatacterPositionPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CollectPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CompanionControllerIdPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\ControlledByIAPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CurrentMovementPathPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CustomGuildPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\CustomLevelPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\FightPropsPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\GroupPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\ISelectableCharacter.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\PublicCaractsPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\SerializationsTypes.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\SummonDataPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\TEMPLATE.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\TemplatePart.cs" />
+    <Compile Include="sniff\packet_handler\packet\CharacterParts\WorldPropsPart.cs" />
+    <Compile Include="sniff\packet_handler\packet\ClientVersion.cs" />
+    <Compile Include="sniff\packet_handler\packet\DefaultResultMessage.cs" />
+    <Compile Include="sniff\packet_handler\packet\GameServerConnect.cs" />
+    <Compile Include="sniff\packet_handler\packet\GameServerConnectToken.cs" />
+    <Compile Include="sniff\packet_handler\packet\LoginSuccess.cs" />
+    <Compile Include="sniff\packet_handler\packet\MapInfo.cs" />
+    <Compile Include="sniff\packet_handler\PacketEnum.cs" />
+    <Compile Include="sniff\packet_handler\packet\PlayerMove.cs" />
+    <Compile Include="sniff\packet_handler\packet\player\APlayerInformations.cs" />
+    <Compile Include="sniff\packet_handler\packet\PublicKey.cs" />
+    <Compile Include="sniff\packet_handler\packet\SelectCharacter.cs" />
+    <Compile Include="sniff\packet_handler\packet\SendToken.cs" />
+    <Compile Include="sniff\packet_handler\packet\ServerList.cs" />
+    <Compile Include="sniff\packet_handler\packet\ServerVersion.cs" />
+    <Compile Include="Utils\BigEndianWriter.cs" />
+    <Compile Include="Utils\ByteReader.cs" />
+    <Compile Include="Utils\extension.cs" />
+    <Compile Include="Utils\HexDump.cs" />
+    <Compile Include="Utils\logbytes.cs" />
+    <Compile Include="Utils\MyListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\sslConnector.cs" />
+    <Compile Include="Utils\sslListener.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
